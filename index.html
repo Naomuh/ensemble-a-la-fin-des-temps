@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ensemble, à la fin des temps · Aides de jeu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="25b0b83c-2c7b-4eb7-96a9-d722b9fe7485" class="page serif"><header><h1 class="page-title">Ensemble, à la fin des temps · Aides de jeu</h1></header><div class="page-body"><hr id="ed44cd92-a672-4553-b270-4f0bcd3bacb0"/><div id="531654d9-d265-4fbe-b915-667ed6d8a992" class="column-list"><div id="226a3d65-4c8a-4bd9-affc-6081e3599b98" style="width:37.5%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="d7745b92-ce94-40cc-8812-61672b2fec5b"><div style="font-size:1.5em"><span class="icon">🎭</span></div><div style="width:100%"><strong><em>Un jeu d’entraide
+et de camaraderie</em></strong></div></figure></div><div id="35891e62-37cb-42cf-bd56-fd2c92def5bd" style="width:62.5%" class="column"><nav id="5c7b5ea4-c3db-4659-91e3-3d1323b7fd45" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#69283bbf-f125-447a-98be-6e9f0ed5681b">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5bc72ed5-44fd-45cd-ace2-d48f9674a7e4">Système de résolution</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cdc3de60-980f-428f-aeb0-1e70224974e4">Matériel requis</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#577218af-c1d7-4a4d-ae40-c0d48021ecd3">Jouer une carte</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c717bf13-f8b4-4737-9731-c2ce85f57495">Lecture des cartes</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#74f9aac1-5419-4d3e-8c07-000412a0b8db">Action</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a572f53c-40a6-4660-a69a-bf730457e2cd">Opposition</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1f005b70-29f5-47c8-8acd-8b22a9829c63">Lecture des cartes personnages</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b405aeb4-c3dc-4633-a196-645c96ecf810">Enseignes</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9767e252-4454-4356-b5f9-4c5623b484f7">Figures</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#330d6eaa-83f5-4a7f-a9d8-4d45ec0332eb">Affliction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d0130be7-d3d8-4d10-adad-3f0e1349499d">Etat</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#096f4ced-b6ba-4a52-a5b2-590e333e3cbe">Potentiel physique</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#08fb8f96-c372-4ecd-968a-73cfd0d48f8b">Oöhrka</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#25001729-e0b0-44b8-a7f0-9da1710331ee">Lumière<em> (compagnie)</em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e63866ff-d637-4181-a49a-04490b04ae2e">Stabilité</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f4041351-a8cc-4cbb-a20e-de2c96db7bed">Ravitaillement<em> (compagnie)</em></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dacae93a-22fe-4209-97ea-b7f932036169">Capacités et equipements</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c9eef49b-4056-4b32-9c67-8cf3161eb4a9">Capacités de commandement</a></div></nav></div></div><hr id="e9c3148b-3e20-4e26-835f-62b318e10e2f"/><h1 id="69283bbf-f125-447a-98be-6e9f0ed5681b" class="">Introduction</h1><div id="92e6d44a-5f1d-4dcd-bfec-7c5160ed56bd" class="column-list"><div id="64ef8671-41cd-4816-a94c-78d2d6d0c096" style="width:37.5%" class="column"><p id="08808218-4edd-4860-af0a-194387b23a89" class=""><span style="border-bottom:0.05em solid"><strong><em>Ensemble, à la fin des temps</em></strong></span> est un jeu de rôle pour un·e <mark class="highlight-blue"><strong>narrat·eur·rice</strong></mark> et au moins un·e <mark class="highlight-blue"><strong>joueu·r·se</strong></mark>.</p><p id="5cb080c1-43d3-4fbb-bb91-26717db95e11" class="">Les <mark class="highlight-blue"><strong>joueu·rs·ses</strong></mark> incarnent un groupe d&#x27;ami·s·es, volontaires ou embrigadé·s·es, et envoyé·s·es au front dans terres désolées d&#x27;Alashie.</p><p id="99762489-d19d-4050-82b1-152775a248a0" class="">Ils·elles doivent protéger les êtres qui leur sont chers jusqu&#x27;à ce qu&#x27;arrive la relève ou qu&#x27;une vie moins tourmentée se présente à eux.</p></div><div id="845df4b7-e488-4e49-8c7c-ef39ba7baa7f" style="width:62.50000000000004%" class="column"><blockquote id="d8544800-e9a0-4711-b41b-39f1508989da" class=""><em>Des siècles d’industrie intensive ont noyé l’atmosphère d’épais nuages toxiques. 
+Dans une tentative de faire renaître une Terre purifiée de l’activité humaine, l’élite terrestre enfuie dans ses palais orbitaux a rependu sur la surface de terribles armes bactériologiques.
+Des décennies après ce qui fut appelé la “Grande purge”, l’humanité pourtant au bord de l’extinction continue de s’autodétruire pour des terres toujours plus réduites.</em></blockquote></div></div><hr id="416aa3fb-fb31-4923-8751-0f98305daaac"/><h1 id="5bc72ed5-44fd-45cd-ace2-d48f9674a7e4" class="">Système de résolution</h1><div id="aedfe70f-f597-4d44-93d8-dfd7537efcf3" class="column-list"><div id="fb1320ad-9fe7-406e-aded-29a5b7923cae" style="width:50%" class="column"><h2 id="cdc3de60-980f-428f-aeb0-1e70224974e4" class="">Matériel requis</h2><p id="b8ffb9be-020a-4591-a7e9-f2dc773d6ab2" class=""><span style="border-bottom:0.05em solid"><strong><em>Ensemble, à la fin des temps</em></strong></span> nécessite l&#x27;utilisation d&#x27;un jeu de cartes français <mark class="highlight-gray">(52 cartes)</mark>, 4 dés à 6 faces et de quoi prendre des notes. Des jetons peuvent être utilisés pour garder trace des valeurs numériques.</p><h2 id="577218af-c1d7-4a4d-ae40-c0d48021ecd3" class="">Jouer une carte</h2><p id="262ec776-8692-4d9f-a02f-535bf1250e9b" class="">Le <mark class="highlight-teal"><strong>personnage </strong></mark>doit jouer une carte de sa pioche. La valeur des cartes tirées est majorée de 1 si l’enseigne du <mark class="highlight-teal"><strong>personnage </strong></mark>est la même que celle les cartes tirées.</p></div><div id="a785e096-5313-441f-af4e-3c3da63214fc" style="width:50%" class="column"><h2 id="c717bf13-f8b4-4737-9731-c2ce85f57495" class="">Lecture des cartes</h2><p id="ae5c34ae-d11e-4bde-83db-d4d4f7f9f5b9" class="">Chaque carte possède son enseigne et sa valeur.</p><p id="66a92f5b-2f69-4b81-88cf-519e494ea2f5" class="">L&#x27;enseigne indique un aspect : 
+la ♠️ représente la versabilité, 
+le ♥️ <strong> </strong>l&#x27;esprit et l&#x27;agilité, 
+le ♦️<strong> </strong>la resilience et le charisme, 
+et enfin le ♣️ la force et l&#x27;ingéniosité.</p><p id="e440b2f2-e174-4dbf-ba3d-2816c73cf17d" class="">La valeur, de son côté, est lue différement selon le contexte.
+De 1 à 5, elle indique un groupe de <mark class="highlight-teal"><strong>personnages</strong></mark>.
+De 6 à 10, elle indique l&#x27;intensité d&#x27;une <mark class="highlight-orange"><strong>action</strong></mark>.
+Pour les figures, elle indique la place du <mark class="highlight-teal"><strong>personnage </strong></mark>parmis les autres.</p></div></div><p id="4779bf29-5241-4648-baaa-e9e47add579c" class="">
+</p><div id="36337048-cba6-42c4-8a16-168017f39fbc" class="column-list"><div id="276555c9-0620-41ef-a8a4-2221861bca3a" style="width:42.85714285714286%" class="column"><h3 id="74f9aac1-5419-4d3e-8c07-000412a0b8db" class="">Action</h3><ul id="f32af6a1-9a41-41ae-bc5e-02d46be9407f" class="bulleted-list"><li style="list-style-type:disc">Les cartes de ♠️ sont valides si leur valeur est supérieure ou égale de 2 points</li></ul><ul id="8b8fd8ea-3f57-4a02-94fa-f1192b3a0515" class="bulleted-list"><li style="list-style-type:disc">Les cartes dont l&#x27;enseigne correspond à celle de l&#x27;action sont valides si leur valeur est supérieure ou égale</li></ul></div><div id="4047d9bc-c14c-4ec0-a3b6-c29951df4602" style="width:57.14285714285713%" class="column"><h3 id="a572f53c-40a6-4660-a69a-bf730457e2cd" class="">Opposition</h3><ul id="ab5c938e-7dd4-4472-9faa-3a74a2cb8de7" class="bulleted-list"><li style="list-style-type:disc">Les cartes de ♠️ sont valides si leur valeur est supérieure ou égale de 2 points</li></ul><ul id="f6fd39a3-fffb-4bb4-93f3-9f5fc852d9c9" class="bulleted-list"><li style="list-style-type:disc">Les cartes dont l&#x27;enseigne correspond à celle de l&#x27;action sont valides si leur valeur est supérieure ou égale</li></ul><ul id="9c0167d9-7650-4d2e-995d-a45007144b86" class="bulleted-list"><li style="list-style-type:disc">Le ♦️<strong> </strong>gagne face au ♥️</li></ul><ul id="21661fc3-aa29-46a2-8ffb-f1def30a3e6d" class="bulleted-list"><li style="list-style-type:disc">Le ♥️ gagne face au ♣️</li></ul><ul id="161165e1-fe70-4398-b9d6-fc6ebb1c3ecf" class="bulleted-list"><li style="list-style-type:disc">Le ♣️<strong> </strong>gagne face au ♦️</li></ul></div></div><hr id="b5f4c3e6-d0a0-47e2-806b-8e274bc30cc4"/><h1 id="1f005b70-29f5-47c8-8acd-8b22a9829c63" class="">Lecture des cartes personnages</h1><div id="caf1b212-08d9-4466-9354-c6bbc5656d08" class="column-list"><div id="fcedd03a-9f27-411b-884f-a43b69dd19ad" style="width:50%" class="column"><h2 id="b405aeb4-c3dc-4633-a196-645c96ecf810" class="">Enseignes</h2><p id="91082e6a-d40e-4747-a2b1-893d45e2569c" class="">Chaque enseigne d&#x27;une carte <mark class="highlight-teal"><strong>personnage </strong></mark>indique à la fois le statut social et, en fonction de la figure, une modification des <mark class="highlight-orange"><strong>actions </strong></mark>liées à l&#x27;enseigne. Là où les ♦️ ont généralement une vie aisées, les ♣️ sont des parias de la société, des misérables ; puis, dans l’entre-deux, se trouvent les ♥️ et les ♠️.</p><h2 id="9767e252-4454-4356-b5f9-4c5623b484f7" class="">Figures</h2><p id="40c154f9-8e00-4ac9-9fc3-442e24e253af" class="">Chaque figure possède des spécificités dans le jeu. Les <mark class="highlight-teal"><strong>rois</strong></mark> peuvent utiliser une capacité de commandement par jour, les <mark class="highlight-teal"><strong>dames</strong></mark> ont +1 <mark class="highlight-purple"><strong>niveau de soutien</strong></mark> pour les autres <mark class="highlight-teal"><strong>personnages</strong></mark> à la demande et peuvent échanger leurs cartes avec celles d’autres <mark class="highlight-teal"><strong>personnages </strong></mark>et les <mark class="highlight-teal"><strong>valets</strong></mark> ont +1 pour leurs <mark class="highlight-orange"><strong>actions</strong></mark>.</p></div><div id="b0e5d711-d270-44d7-9c33-538acac95976" style="width:50%" class="column"><h2 id="330d6eaa-83f5-4a7f-a9d8-4d45ec0332eb" class="">Affliction</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b2b5395e-ffea-440a-968f-458a74cf8f61"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>1 Mutilé·e de guerre :</strong>  <em>-2 aux cartes de carreaux</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dbbdf85d-df5d-49b9-b486-fd837160d16a"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>2 Aveuglé·e :</strong><em><strong> </strong></em><em>-1 niveau de lumière</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1c1a305b-a846-423d-a8a8-2d0191f2e34d"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>3 Souffrant·e :</strong><em> +1 dé aux jets de peste</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ca08beb3-1d44-4c2b-81e9-33f4a145881d"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>4 Obusite : </strong><em>perds ses capacités sous 2 de stabilité</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c5b85bc4-a074-4699-83c7-f5189bd1ce3c"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>5 — : </strong><em>(aucune affliction)</em></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a5b06964-4dc9-4c60-927b-facace35961d"><div style="font-size:1.5em"><span class="icon">🎲</span></div><div style="width:100%"><strong>6 — : </strong><em>(aucune affliction)</em></div></figure></div></div><p id="d7e89d25-55a8-463d-846a-a5c14fe18c78" class="">
+</p><hr id="a98cabb1-b983-4fe9-9874-f74c2a1c96fd"/><h1 id="d0130be7-d3d8-4d10-adad-3f0e1349499d" class="">Etat</h1><div id="790dc138-98b1-4b51-b85f-bff868ffb9c1" class="column-list"><div id="63425157-af7b-427b-9298-f61cbfa78598" style="width:50%" class="column"><h2 id="096f4ced-b6ba-4a52-a5b2-590e333e3cbe" class="">Potentiel physique</h2><p id="b00efffa-aa34-44a9-8be2-5d3ab93aaae0" class="">La pioche du <mark class="highlight-teal"><strong>personnage </strong></mark>représente son <strong><mark class="highlight-orange">potentiel physique</mark></strong>. Lorsqu&#x27;il n&#x27;y a plus de carte, le <mark class="highlight-teal"><strong>personnage </strong></mark>est hors d&#x27;état. Se reposer ou être soigné permet de regagner jusqu&#x27;à 4 cartes.</p><p id="cc311aa8-93f5-46e1-8f17-f2a69727550f" class="">Ainsi, un <mark class="highlight-teal"><strong>personnage </strong></mark>avec autant de <mark class="highlight-orange"><strong>niveau de désavantage</strong></mark><mark class="highlight-orange"> </mark>que de cartes restantes dans sa pioche ne peut plus rien faire et peut tomber dans l&#x27;inconscience.</p><h2 id="08fb8f96-c372-4ecd-968a-73cfd0d48f8b" class="">Oöhrka</h2><p id="ffdd105f-be56-4138-a39e-44b091c82ac9" class="">Le <mark class="highlight-purple"><strong>niveau de toxicité</strong></mark> est agumenté par le<mark class="highlight-yellow"> </mark><mark class="highlight-yellow"><strong>niveau de lumière</strong></mark>.</p><p id="8b800a91-d613-44cc-8aa6-532d2c0a2660" class="">S’il y a au moins un 6 obtenu, le <mark class="highlight-teal"><strong>personnage </strong></mark>est <mark class="highlight-purple"><strong>empoisonné </strong></mark>et majore son <mark class="highlight-orange"><strong>niveau de désavantage</strong></mark>. Chaque jour <mark class="highlight-gray">(à moins de recevoir un </mark><mark class="highlight-purple"><strong>traitement</strong></mark><mark class="highlight-gray">)</mark>, il lance de nouveau un dé selon la même logique.</p><p id="0dc09273-ab5a-49ba-b823-a7f9fdd9da06" class="">L’utilisation d’un <strong>masque à gaz</strong> permet d’éviter de faire des j<mark class="highlight-purple"><strong>ets de poisons</strong></mark> en échange d’un <mark class="highlight-orange"><strong>niveau de désavantage</strong></mark> supplémentaire.</p><h2 id="25001729-e0b0-44b8-a7f0-9da1710331ee" class="">Lumière<em> (compagnie)</em></h2><p id="a72128e0-a164-48de-b5c4-359dd0b23dcf" class="">Le <mark class="highlight-yellow"><strong>niveau de lumière</strong></mark> limite le nombre maximal de carte connues et utilisables. Le <mark class="highlight-yellow"><strong>niveau</strong></mark><mark class="highlight-yellow"> </mark>peut être augmenté avec un équipement adapté et a un <mark class="highlight-yellow"><strong>niveau</strong></mark><mark class="highlight-yellow"> </mark>initial de 1 à la surface lors du jour.</p></div><div id="22f8bf72-fe5e-4d02-8fb9-2ce4f7850e32" style="width:50%" class="column"><h2 id="e63866ff-d637-4181-a49a-04490b04ae2e" class="">Stabilité</h2><p id="56d67cf1-547f-433d-b013-ea9dd55bdbf1" class="">Lorsqu&#x27;un <mark class="highlight-teal"><strong>personnage </strong></mark>vie une <mark class="highlight-pink"><strong>situation difficile</strong></mark> <mark class="highlight-gray">(être témoins de la mort de quelqu&#x27;un, être pris dans un bombardement, perdre un être cher...)</mark>, il doit lancer un dé par<mark class="highlight-pink"><strong> point de</strong></mark> <mark class="highlight-pink"><strong>stabilité</strong></mark>, pour un maximum de 4 <mark class="highlight-pink"><strong>point</strong></mark>.</p><p id="673fc9fb-e2b2-40ee-98e8-5a50e57b42ef" class="">Chaque 6 obtenu représente la force de la réaction face à la dite situation. Le <mark class="highlight-teal"><strong>personnage</strong></mark> peut choisir entre perdre un <mark class="highlight-pink"><strong>point de stabilité </strong></mark>par points de force et <mark class="highlight-pink"><strong>faiblir </strong></mark>pendant 2 tour ou prendre sur lui en perdant un <mark class="highlight-pink"><strong>point de stabilité</strong></mark><mark class="highlight-pink"> </mark>supplémentaire. Si le <mark class="highlight-pink"><strong>niveau de stabilité</strong></mark> d’un <mark class="highlight-teal"><strong>personnage </strong></mark>liée par <mark class="highlight-purple"><strong>soutien </strong></mark>sur celui qui fait un jet de stabilité est supérieur à 4 moins le <mark class="highlight-purple"><strong>niveau de soutien</strong></mark>, le <mark class="highlight-teal"><strong>personnage </strong></mark>de soutien perd la moitié du personnage soutenu tandis que ce dernier ne perd rien. S’il le personnage qui soutiens n’a plus de point de stabilité après cette action, il doit se briser.</p><p id="c7c42cc3-d00e-4fb2-a327-e4d82eca7814" class="">Si tous les dés obtiennent un 6, le <strong><mark class="highlight-teal">personnage</mark></strong> se <mark class="highlight-pink"><strong>brise</strong></mark>. S’il est seul, il disparaît de l’aventure et le·la <mark class="highlight-blue"><strong>joueu·r·se </strong></mark>devra créer un nouveau <mark class="highlight-teal"><strong>personnage</strong></mark>, autrement, il ne peut pas participer jusqu’à la scène suivante. Si le <mark class="highlight-pink"><strong>niveau de stabilité</strong></mark> d’un <mark class="highlight-teal"><strong>personnage </strong></mark>liée par <mark class="highlight-purple"><strong>besoin</strong></mark> par celui qui devrait se <mark class="highlight-pink"><strong>briser </strong></mark>est supérieur à 4 moins le <mark class="highlight-purple"><strong>niveau de besoin</strong></mark>, le <mark class="highlight-teal"><strong>personnage </strong></mark>ne peut pas se <mark class="highlight-pink"><strong>briser </strong></mark>est reste à 1 <mark class="highlight-pink"><strong>point de stabilité</strong></mark>.</p><h2 id="f4041351-a8cc-4cbb-a20e-de2c96db7bed" class="">Ravitaillement<em> (compagnie)</em></h2><p id="73c5a60f-b3d9-46c4-9033-4beb50bd5fc0" class="">Le <mark class="highlight-orange"><strong>niveau de ravitaillement</strong></mark> permet d’utiliser des équipement limités. Lorsque la <mark class="highlight-teal"><strong>compagnie</strong></mark><mark class="highlight-teal"> </mark>possède une<mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong>ligne de ravitaillement</strong></mark>, le <mark class="highlight-orange"><strong>niveau de ravitaillement</strong></mark> est majoré de 4 points.</p></div></div><hr id="088cb2a8-a6fa-461e-880c-55580fc951be"/><h1 id="dacae93a-22fe-4209-97ea-b7f932036169" class="">Capacités et equipements</h1><h2 id="c9eef49b-4056-4b32-9c67-8cf3161eb4a9" class="">Capacités de commandement</h2><div id="10d79322-f550-4180-b47c-dac61f2c52d6" class="column-list"><div id="d20f500e-66d5-460a-a03f-e17dc09a5de1" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="84bcadce-a7b7-4b5b-a861-07bfe9554a09"><div style="font-size:1.5em"><span class="icon">🃏</span></div><div style="width:100%"><strong>Repos</strong>♦️♥️♠️♣️<hr id="fc34136d-d54e-44bb-b761-7ab169ae6190"/><p id="6a4e74d3-aa2c-4064-a045-743a81e9901b" class="">Permet de dépenser un <mark class="highlight-orange"><strong>tour</strong></mark> pour faire gagner autant de <mark class="highlight-purple"><strong>niveaux de stabilité</strong></mark> aux <mark class="highlight-teal"><strong>personnages</strong></mark><mark class="highlight-teal"> </mark>que le nombre d’objets de détente divisé par le nombre de <mark class="highlight-teal"><strong>personnages</strong></mark>.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9bfedfe4-159e-4465-aac8-d1dd1e8d7349"><div style="font-size:1.5em"><span class="icon">💀</span></div><div style="width:100%"><strong>Peloton d’exécution </strong>♦️♥️♠️♣️<hr id="f3c643f5-29e9-4164-b197-e5e9e4f54e84"/><p id="7b2a68a5-241d-4369-9e76-b7b072bc27e9" class="">Permet dépenser un <mark class="highlight-orange"><strong>tour </strong></mark>pour retirer un <strong><mark class="highlight-purple">niveau de stabilité </mark></strong>à leur <strong>compagnie</strong>.
+Les <mark class="highlight-teal"><strong>personnages </strong></mark>témoins doivent faire leur <mark class="highlight-purple"><strong>jet de stabilité</strong></mark>.</p></div></figure></div><div id="5fb3db6a-d19b-47d4-b0d3-c25bf2142d25" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b857926c-a477-46ae-a344-a03a99a62174"><div style="font-size:1.5em"><span class="icon">📯</span></div><div style="width:100%"><strong>Ralliement</strong>♦️<hr id="925e44cc-cb61-443f-8a34-eb1976aab5f0"/><p id="60ab9698-988f-46a5-a047-0fcacaa5f63c" class="">Permet d’annuler le <mark class="highlight-purple"><strong>faiblissement </strong></mark>de leur <strong>compagnie </strong>ou des <mark class="highlight-teal"><strong>personnages </strong></mark>autour de lui. Leur <mark class="highlight-purple"><strong>niveau de stabilité</strong></mark> est remis à 1.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="532bf057-00ee-408c-9e91-928c58faeae3"><div style="font-size:1.5em"><span class="icon">🚩</span></div><div style="width:100%"><strong>Signal </strong>♥️<hr id="d2b4424d-e598-47f8-b8f6-86f36f03e7f2"/><p id="4c0c4e1c-cf52-417e-8d96-0cf673791931" class="">Permet de dépenser un <mark class="highlight-orange"><strong>tour</strong></mark> pour communiquer à distance une information pré-établie.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="200712ef-1741-49c1-ab29-572a00a1edb8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Initiative </strong>♠️<hr id="107b08af-e88e-4260-861c-75143acf539e"/><p id="59cb0ece-4aa1-43a5-8a8a-17e8139796ed" class="">Permet d’économiser un <mark class="highlight-orange"><strong>point de ravitaillement</strong></mark> à la <strong>compagnie</strong>.</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f093b2c7-9bac-4267-add4-cc79c490bf00"><div style="font-size:1.5em"><span class="icon">🐎</span></div><div style="width:100%"><strong>Marche forcée </strong>♣️<hr id="42ac634a-171d-477f-9fd0-04eca2e69ab8"/><p id="c0c764ea-db62-4365-a5e0-57d485002429" class="">Permet à la <strong>compagnie </strong>ou aux <mark class="highlight-teal"><strong>personnages </strong></mark>autour de faire une <mark class="highlight-orange"><strong>action</strong></mark> supplémentaire lors d’un tour.</p></div></figure></div></div><hr id="63575938-bcbb-43a2-9efb-017dde7b6102"/></div></article></body></html>
